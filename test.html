@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<script>
+function user() {
+    name = 'mike';
+    age= 30;
+    gender ='male';
+};
+
+const userj = {
+    name : 'mike',
+    age : 30,
+    gender : 'male'
+};
+
+const user2 = new user();
+console.log( Object.keys(userj) );
+
+function BlackDog(){
+    this.name = '흰둥이';
+    return {
+        name : '검둥이',
+        bark: function() {
+            console.log(this.name + "멍멍");
+        }
+    }
+}
+
+const blackDog = new BlackDog();
+blackDog.bark();
+
+function WhiteDog() {
+    this.name = '흰둥이';
+    return {
+        name : '검둥이',
+        bark: () => {
+            console.log(this.name + '멍멍');
+            console.log(name + '멍멍');
+        }
+    }
+}
+
+const whiteDog = new WhiteDog();
+whiteDog.bark();
+
+let userList = [
+    {name:"Mike", age:30},
+    {name:"Jane", age: 20},
+    {name:"Tom", age:10}
+];
+
+let newUserList = userList.map((user, index) =>{
+    return Object.assign({}, user, {
+        isAdult: user.age > 19,
+    });
+});
+
+console.log(newUserList);
+
+</script>
+
+</html>
